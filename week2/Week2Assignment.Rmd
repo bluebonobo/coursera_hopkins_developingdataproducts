@@ -1,0 +1,29 @@
+---
+title: "Coursera Hopkins - Developing Data Products - Week2 Assignment"
+output: html_document
+date: '2022-05-22'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo=FALSE}
+# install.packages("leaflet")
+library(leaflet)
+```
+
+## World Capitals
+
+We chose to map the world capitals using the following resource from Kaggle https://www.kaggle.com/datasets/nikitagrec/world-capitals-gps?select=concap.csv
+Click on the markers to see country and capital name. Enjoy !
+
+```{r}
+capitals <- read.csv("./concap.csv", header = TRUE)
+#create a new column with html formated text
+capitals$PopupText <- paste("<b>Capital :</b>",capitals$CapitalName, "<br><b>Country :</b>", capitals$CountryName)
+my_map <- capitals %>% leaflet() %>% addTiles() %>% addMarkers(lat = capitals$CapitalLatitude, lng = capitals$CapitalLongitude, popup = capitals$PopupText )
+
+my_map
+```
+
