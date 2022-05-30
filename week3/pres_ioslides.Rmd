@@ -14,11 +14,11 @@ library(plotly)
 ```
 
 
-## Interactive Scatter Mpg vs Weight
+## Interactive Scatter Speed vs Displacement
 ```{r mtcars, eval = TRUE, echo = FALSE}
 # install.packages("plotly",repos="http://cran.us.r-project.org")
 # # install.packages("ggplot")
-py <- plot_ly(mtcars, x = ~wt, y = ~mpg, type = "scatter", mode = 'markers', color = ~factor(cyl))
+py <- plot_ly(mtcars, x = ~disp, y = ~qsec, type = "scatter", mode = 'markers', color = ~factor(cyl))
 py
 ```
 
