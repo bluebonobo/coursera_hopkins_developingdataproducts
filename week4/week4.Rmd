@@ -1,0 +1,50 @@
+---
+title: "Course Project - Shiny Application and Reproducible Pitch"
+author: "fred"
+date: "`r Sys.Date()`"
+output:
+  ioslides_presentation: default
+  slidy_presentation: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(plotly)
+```
+
+## Pitch
+
+The Shiny application developed for the week 4 assignment "Shiny Application and Reproducible Pitch" proposes a data vizualization of the Diamonds dataset distribution as well as linear models to model the relationship between carat and price.
+
+The Shiny application gives the ability to the user to set the size of the random sample used to model this relationship. 
+
+The Shiny appliation can be found here
+
+## Slide with Bullets
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+## Slide with R Output
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Slide with Plot
+
+```{r pressure}
+plot(pressure)
+```
+
+## Diamond Price vs Carat
+```{r diamonds, eval = TRUE, echo = FALSE}
+# https://ggplot2.tidyverse.org/reference/diamonds.html
+# https://bookdown.org/yih_huynh/Guide-to-R-Book/diamonds.html
+#need to bucket
+py <- plot_ly(diamonds, x = ~carat, y = ~price, type = "scatter", mode = 'markers', color = ~factor(cut))
+py
+```
+
+## Thank you !

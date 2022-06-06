@@ -1,0 +1,8 @@
+install.packages("devtools")
+library(devtools)
+#install.packages("stringr")
+install_github('ramnathv/slidify',ref='dev')
+install_github('ramnathv/slidifyLibraries',ref='dev')
+library(slidify)
+library(slidifyLibraries)
+setwd("~//Desktop/dev/R/JohnsHopkins DataScienceSpecialization/johnshopkins-data-science-specialization/work/09_DevelopingDataProducts/coursera_hopkins_developingdataproducts/week3")
