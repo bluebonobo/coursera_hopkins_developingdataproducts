@@ -60,21 +60,7 @@ shinyServer(function(input, output) {
     premium <- d %>% filter(cut == "Premium")
     ideal <- d %>% filter(cut == "Ideal")
 
-    # fig <- plot_ly(alpha = 0.6)
-    # fig <- fig %>% add_histogram(x = ~d$price, breaks=100)
-    # fig <- fig %>% add_histogram(x = ~fair$price, breaks=100)
-    # fig <- fig %>% add_histogram(x = ~good$price, breaks=100)
-    # fig <- fig %>% add_histogram(x = ~verygood$price, breaks=100)
-    # fig <- fig %>% add_histogram(x = ~premium$price, breaks=100)
-    # fig <- fig %>% add_histogram(x = ~ideal$price, breaks=100)
-    # 
-    # fig <- fig %>%   layout(barmode = "overlay",
-    #                         title = "Histogram of diamond price by cut",
-    #                         xaxis = list(title = "Price",
-    #                                      zeroline = FALSE),
-    #                         yaxis = list(title = "Count",
-    #                                      zeroline = FALSE))
-    fig
+   fig
 
   })
   
@@ -83,36 +69,13 @@ shinyServer(function(input, output) {
     
     d <- diamonds[sample(nrow(diamonds), input$samplesize), ]
     
-    # fitModel <- lm(d$price ~ d$carat) %>% fitted.values()
-    
-    # fig <- plot_ly(x = ~d$carat, y = ~d$price, mode = "markers") %>% 
-    #   add_markers(y = ~d$price) %>% 
-    #   add_trace(x = ~d$carat, y = fitModel, mode = "lines") %>%
-    #   layout(showlegend = F)
-    # 
-    # fair <- d %>% filter(cut == "Fair")
-    # good <- d %>% filter(cut == "Good")
-    # verygood <- d %>% filter(cut == "Very Good")
-    # premium <- d %>% filter(cut == "Premium")
-    # ideal <- d %>% filter(cut == "Ideal")
-    
-
     fig <- ggplotly(
       ggplot(d, aes(x = carat, y = price, color = cut)) +
         geom_point(color = "#CC0000", shape = 1, size = 1) +
-        # geom_smooth(method = 'lm') +
         geom_smooth(method = 'lm') 
-        # + annotate("text", label=paste0("R = ", round(with(d, cor.test(d$carat, d$price))$estimate, 2),
-                                      # ", p = ", with(d, cor.test(d$carat, d$price))$p.value),
-                 # x = min(d$carat) + 1, y = max(d$price) + 1, color="steelblue", size=2)
-      #+ theme_classic()
     )
 
-    # fig <- ggplotly(
-    #   ggplot(d, aes(x=carat, y=price, color=clarity)) + geom_point()
-    # )   
-    
-    fig
+   fig
     
   })
   

@@ -12,31 +12,21 @@ knitr::opts_chunk$set(echo = FALSE)
 library(plotly)
 ```
 
-## Pitch
+## The Pitch
 
 The Shiny application developed for the week 4 assignment "Shiny Application and Reproducible Pitch" proposes a data vizualization of the Diamonds dataset distribution as well as linear models to model the relationship between carat and price.
 
-The Shiny application gives the ability to the user to set the size of the random sample used to model this relationship. 
+The interactive Shiny application gives the ability to the user to set the size of the random sample used to build the models of the carat / price relationship. THe default sample size is set to 100. The Diamonds dataset comprises 53,940 records.
 
-The Shiny appliation can be found here
+The Shiny application can be found here https://bluebonobo.shinyapps.io/week4shinyapp/
 
-## Slide with Bullets
+## Calculation done on Server
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+- The calculation done on the server are located in the file server.R locate in github here https://github.com/bluebonobo/coursera_hopkins_developingdataproducts/tree/main/week4/week4ShinyApp
+- The application build one linear regression model per cut quality
+- Each model is then represented with its error on the scatter plot
+- Models can be isolated by selected the type of cut in the legend
 
-## Slide with R Output
-
-```{r cars, echo = TRUE}
-summary(cars)
-```
-
-## Slide with Plot
-
-```{r pressure}
-plot(pressure)
-```
 
 ## Diamond Price vs Carat
 ```{r diamonds, eval = TRUE, echo = FALSE}

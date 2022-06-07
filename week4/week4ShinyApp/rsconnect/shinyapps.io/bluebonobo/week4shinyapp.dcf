@@ -1,0 +1,11 @@
+name: week4shinyapp
+title:
+username:
+account: bluebonobo
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6442629
+bundleId: 5983843
+url: https://bluebonobo.shinyapps.io/week4shinyapp/
+when: 1654567185.83989
+lastSyncTime: 1654567185.83991

@@ -28,19 +28,12 @@ shinyUI(fluidPage(
                         value = 100)
         ),
 
-        # Show a plot of the generated distribution
-        # mainPanel(
-        #     plotOutput("distPlot")
-        # )
-        # mainPanel(
-        #   plotlyOutput("Plot")
-        # ),
-        
-        tabsetPanel(
-          tabPanel("Histogram", plotlyOutput("Plot")), 
-          # tabPanel("Model", plotlyOutput("Scatter")),
-          tabPanel("Linear Models", plotlyOutput("Ggplot"))
+       tabsetPanel(
+          tabPanel("Documentation", includeHTML("documentationTab.html")) 
+          ,tabPanel("Histogram", plotlyOutput("Plot"))
+          ,tabPanel("Linear Models", plotlyOutput("Ggplot"))
+          
         )
-        
+
     )
 ))
